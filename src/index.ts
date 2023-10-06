@@ -38,6 +38,20 @@ const config = {
     coinTTL: 3600
 };
 
+app.get('/api/coins/:room', async (req, res) => {
+    const room = req.params.room;
+    try {
+        const response = await getCointInRoom(room);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener la cantidad de monedas en la habitación' });
+    }
+});
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+})
+
 
 
 io.on("connection", (socket) => {
