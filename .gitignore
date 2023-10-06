@@ -1,0 +1,11 @@
+*.js
+*.js.map
+*.d.ts
+
+node_modules/
+**/node_modules/
+
+docker-compose.override.yml
+docker-compose.override.yml.example
+*.override.yml
+*.override.yml.example
